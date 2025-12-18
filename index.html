@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Banchetto Silenzioso di Havenwood</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title-page {
+            text-align: center;
+            border: 4px solid #000;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .title-page h1 {
+            font-size: 20pt;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+        
+        .title-page p {
+            font-size: 11pt;
+            margin: 0;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 12px 0 6px 0;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2c2c2c;
+            padding-bottom: 2px;
+        }
+        
+        h3 {
+            font-size: 10pt;
+            font-weight: bold;
+            margin: 8px 0 4px 0;
+        }
+        
+        p {
+            margin: 0 0 6px 0;
+            text-align: justify;
+        }
+        
+        .character-box, .location-box {
+            background-color: #f5f5f5;
+            border-left: 3px solid #2c2c2c;
+            padding: 6px 8px;
+            margin: 8px 0;
+        }
+        
+        .character-box h3, .location-box h3 {
+            margin: 0 0 3px 0;
+            font-size: 10pt;
+        }
+        
+        .character-box p, .location-box p {
+            margin: 0 0 3px 0;
+            font-size: 9pt;
+        }
+        
+        .mechanics-box {
+            background-color: #fffef0;
+            border: 1px solid #e0e0e0;
+            padding: 6px 8px;
+            margin: 8px 0;
+            font-style: italic;
+        }
+        
+        .ending-box {
+            background-color: #f8f8f8;
+            border: 2px solid #2c2c2c;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 9pt;
+        }
+        
+        table th {
+            background-color: #e0e0e0;
+            padding: 4px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #2c2c2c;
+        }
+        
+        table td {
+            padding: 4px;
+            border: 1px solid #ccc;
+        }
+        
+        ul, ol {
+            margin: 4px 0 8px 20px;
+            padding: 0;
+        }
+        
+        li {
+            margin: 2px 0;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        .compact {
+            line-height: 1.2;
+        }
+        
+        .two-column {
+            columns: 2;
+            column-gap: 15px;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+        
+        em {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGINA 1 -->
+<div class="title-page">
+    <h1>Il Banchetto Silenzioso di Havenwood</h1>
+    <p>Un modulo per Rural Gothic</p>
+</div>
+
+<h2>Il Mistero</h2>
+<p>Cinquant'anni fa, il Reverendo Elias Thorne invocò inconsapevolmente <strong>Shub-Niggurath</strong> durante una carestia. Havenwood esplose in abbondanza soprannaturale. Un anno dopo, mercanti Pequot guidati da Wequai—con documenti francesi sui "rituali di contenimento"—riconobbero i segni. Il Reverendo e il Sindaco li scacciarono brutalmente.</p>
+<p>Morendo alla Quercia della Sorgente, i Pequot incisero simboli maledetti che <strong>trasformarono l'acqua in veicolo di fame perpetua</strong>. Wequai seppellì i documenti in una cassetta di rame. Shub-Niggurath li mummificò con le radici. In sei mesi, l'intera popolazione si divorò nel "Banchetto Silenzioso".</p>
+
+<h2>Scena Iniziale</h2>
+<p><strong>FAME.</strong> I personaggi trovano Havenwood deserto—porte aperte, boccali pieni, ferro ancora caldo. Poi scoprono tumuli di ossa rosicchiate sparse ovunque. La neve sigilla i passi montani. <em>[+1 Gettone Terrore]</em></p>
+
+<h2>L'Eco della Capra Nera</h2>
+<p><strong>Natura:</strong> Influenza di Shub-Niggurath amplificata dalla maledizione Pequot. Fertilità eccessiva + fame nell'acqua = ciclo divoratore.</p>
+<p><strong>Manifestazioni:</strong> Crescita distorta, cibo diventa cenere, sussurri, visioni del Banchetto.</p>
+<p><strong>Poteri:</strong> Fame spirituale veicolata dall'acqua, radici viventi, illusioni, corruzione progressiva.</p>
+
+<h3>Condizioni di Distruzione</h3>
+<ol class="compact">
+    <li><strong>Trovare la Cassetta:</strong> Sotto la Quercia (informazioni da Silas o 1 giorno scavo)</li>
+    <li><strong>Tre Sacrifici (in ordine):</strong>
+        <ul>
+            <li><strong>Quercia - Possesso:</strong> Bruciare oggetto prezioso (perdita permanente)</li>
+            <li><strong>Campo - Fortuna:</strong> Versare sangue (-1 Fortuna permanente)</li>
+            <li><strong>Pietra - Ego:</strong> Un PG rimane Custode OPPURE giurano di non sfruttare valle</li>
+        </ul>
+    </li>
+    <li><strong>Resistere Tentazione:</strong> Prova Volontà vs 15 + Gettoni Terrore</li>
+</ol>
+
+<h2>Sistema Gettoni Terrore</h2>
+<table>
+    <tr>
+        <th>Gettoni</th>
+        <th>Manifestazioni</th>
+        <th>Effetti</th>
+    </tr>
+    <tr>
+        <td><strong>0-1</strong></td>
+        <td>Porte chiudono, sussurri</td>
+        <td>Nessuno</td>
+    </tr>
+    <tr>
+        <td><strong>2-3</strong></td>
+        <td>Illusioni cibo, radici muovono</td>
+        <td>-1 Prove finché non mangiano</td>
+    </tr>
+    <tr>
+        <td><strong>4-5</strong></td>
+        <td>Visioni Banchetto, radici attaccano notte</td>
+        <td>-1 cooperazione, Prove vs impulsi</td>
+    </tr>
+    <tr>
+        <td><strong>6</strong></td>
+        <td><strong>SOGLIA CRITICA</strong></td>
+        <td>-2 cooperazione, <strong>1 ora reale</strong></td>
+    </tr>
+    <tr>
+        <td><strong>7+</strong></td>
+        <td>Manifestazione, fame insopportabile</td>
+        <td>Banchetto imminente, serve doppio sacrificio</td>
+    </tr>
+</table>
+
+<p><strong>Accumulo:</strong> +1 per nascondere cibo/tradire/Quercia/acqua contaminata; +2 per violenza/pepita argento.<br>
+<strong>Riduzione:</strong> -1 per condividere cibo (costa razione)/proteggere/seppellire bambino; -2 per salvare PG/completare sacrificio.</p>
+
+<h2>Manifestazione Shub-Niggurath</h2>
+<p>A 7 Gettoni: massa di vita eccessiva—carne germoglia, terra partorisce e divora. Migliaia di bocche sussurrano: <em>"Lasciate che la Madre vi nutra. Per sempre."</em></p>
+<p><strong>Prova Volontà (17):</strong> Fallimento = paralisi 1d6 turni. Tentazione ogni turno (14): 3 fallimenti = soggiogati.</p>
+<p><strong>Superarla:</strong> Acqua santa (1 turno), benedizione (3 turni), Doppio Sacrificio, completare Pietra, alba (12 turni).</p>
+
+<h2>Personaggi Principali</h2>
+
+<div class="character-box">
+    <h3>Reverendo Elias Thorne (Eco Spettrale)</h3>
+    <p><em>Consunto, traslucido</em></p>
+    <p>Appare alla Pietra. Confessa invocazione inconsapevole. A 6 Gettoni indica Campo: "Il sangue sulla terra sterile!"</p>
+</div>
+
+<div class="character-box">
+    <h3>Wequai (Documenti)</h3>
+    <p><em>Mercante Pequot mummificato</em></p>
+    <p>Resti avvolti da radici alla Quercia, tiene chiave rame. Cassetta: rituali francesi, diario, mappa, descrizione maledizione. Ultima nota: "Abbiamo inciso Fame Eterna. Acqua = veleno spirituale."</p>
+</div>
+
+<div class="character-box">
+    <h3>Silas Thorne</h3>
+    <p><em>Pallido, pazzo, sopravvissuto 50 anni</em></p>
+    <p><strong>Dilemma:</strong> Conosce cassetta, pretende TUTTE provviste. Tutto = info immediate +2 Gettoni. Metà = info parziali. Rifiuto = attacco. Curarlo = alleato.</p>
+</div>
+
+<div class="character-box">
+    <h3>Martha Goodwin (Diari)</h3>
+    <p>Mese 3: "Acqua metallica, cibo non sazia." Mese 5: "Fame nell'anima, guardo vicini diversamente." Ultime pagine: illeggibili, macchiate.</p>
+</div>
+
+<div class="character-box">
+    <h3>Sindaco Croft (Documenti)</h3>
+    <p>Registri: profitti straordinari post-rituale. Lettera: "Pequot parlano di veleni, superstizioni." Finale: "Qualcosa nell'acqua... fame..."</p>
+</div>
+
+<h2>Luoghi Importanti</h2>
+
+<div class="two-column compact">
+
+<div class="location-box">
+    <h3>1. Chiesa San Benedetto</h3>
+    <p>Sermoni degenerati. Diario reverendo dietro altare. Biblioteca: testi francesi. Pozzo: acqua pura (non tocca Quercia). Rifugio sicuro da radici.</p>
+</div>
+
+<div class="location-box">
+    <h3>2. Casa Sindaco</h3>
+    <p>Contabilità ricchezza. Lettere vs Pequot. Cantina: Silas nascosto.</p>
+</div>
+
+<div class="location-box">
+    <h3>3. Locanda</h3>
+    <p>Sala: boccali acqua scura. Cucina: diario Martha. Deposito: 2d6 razioni, 1d6 brocche acqua contaminata. Cisterna collegata Quercia.</p>
+</div>
+
+<div class="location-box">
+    <h3>4. Miniera</h3>
+    <p>Carrelli minerale. Tunnel: echi voci. Radici in profondità, vena acqua. Pepita argento: +2 Gettoni se presa. Crolli: 2d6 danni.</p>
+</div>
+
+<div class="location-box">
+    <h3>5. Quercia Sorgente</h3>
+    <p>Incisioni Fame Eterna. Corpi mummificati Pequot avvolti radici—Wequai tiene chiave. Tre sorgenti acqua torbida. Radici attaccano (4+ Gettoni). Cassetta 1m sotto. <em>[+1 Gettone vista]</em></p>
+</div>
+
+<div class="location-box">
+    <h3>6. Pietra Patto</h3>
+    <p>Menhir, rune pulsanti. Aria gelida. Per sensitivi: visioni invocazione. Luogo terzo sacrificio.</p>
+</div>
+
+<div class="location-box">
+    <h3>7. Tumuli Ossa</h3>
+    <p>Sparsi ovunque, 1m altezza. Ossa rosicchiate. Seguono radici Quercia. <em>[+1 Gettone]</em> Uno: resti bambino medaglione (seppellire = -1 Gettone).</p>
+</div>
+
+<div class="location-box">
+    <h3>8. Campo Margherite</h3>
+    <p>Fiori morti, sterile. Rifugio: cibo funziona, acqua pioggia pura. Luogo secondo sacrificio. Post-sacrificio: fiori rinascono.</p>
+</div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- PAGINA 2 -->
+
+<h2>Dilemmi Attivi</h2>
+
+<div class="mechanics-box">
+    <strong>Silas (G2-3):</strong> Tutto cibo = info +2 Gettoni. Metà = parziali. Rifiuto = attacco. Curare = alleato.<br>
+    <strong>Rifugio (G4 sera):</strong> Chiesa (sicura, no cibo) o Locanda (cibo, radici). 5 min reali decidere.<br>
+    <strong>Cassetta (G3-4):</strong> Entrare radici: Prova Difficile, -2 Resistenza. Fallimento = intrappolato. 5+ Gettoni = attacco 1d6/turno. Sacrificio volontario = cassetta emerge, -2 Gettoni, PG perso.
+</div>
+
+<h2>Timeline 7 Giorni</h2>
+<p class="compact"><strong>G0:</strong> Arrivo, tumuli +1G, neve. <strong>G1:</strong> Fame inizia, diari. <strong>G2:</strong> -1 Res, Silas. <strong>G3:</strong> Quercia +1G, cassetta. <strong>G4:</strong> Rituali, dilemma rifugio, 4+G radici. <strong>G5:</strong> Tempesta, 5+G allucinazioni, 6G=SOGLIA. <strong>G6:</strong> 7G=Manifestazione. <strong>G7:</strong> Finale.</p>
+
+<h2>Finali</h2>
+
+<div class="ending-box">
+    <h3>Equilibrio Restaurato</h3>
+    <p>Tutti e tre sacrifici prima 7G. Valle purificata, acqua cristallina, radici ritirano. Ripopolabile rispettando equilibrio.</p>
+</div>
+
+<div class="ending-box">
+    <h3>Vittoria Parziale</h3>
+    <p>1-2 sacrifici o tutti con 7+G. Valle contenuta ma non purificata. Conseguenze permanenti. Custode solitario: uno rimane, altri fuggono colpevoli.</p>
+</div>
+
+<div class="ending-box">
+    <h3>Fuga Disperata</h3>
+    <p>5-6G, fuga pre-Manifestazione. 5 Prove vs tempesta/fame/radici. 2+ fallimenti = morte. Trauma permanente -1 Fortuna. Maledizione attiva. Visioni fame eterne.</p>
+</div>
+
+<div class="ending-box">
+    <h3>Nuovo Banchetto</h3>
+    <p>8+G inevitabile. Fame insopportabile, tradimenti, visione collettiva, violenza cannibale automatica. Radici assorbono resti. Nuovi tumuli, voci ai sussurri.</p>
+</div>
+
+<div class="ending-box">
+    <h3>Doppio Sacrificio Supremo (7+G)</h3>
+    <p>Due PG si offrono simultaneamente durante Manifestazione. Assorbiti, diventano guardiani eterni. Tutti Gettoni→0. Altri hanno 2 ore per fuggire o completare rituali. Sacrificati = echi protettivi permanenti.</p>
+</div>
+
+<h2>Personaggi Pregenerati</h2>
+
+<div class="character-box">
+    <h3>Jakob Steiner – Cacciatore</h3>
+    <p><em>Robusto, pratico, diffidente</em></p>
+    <p><strong>Tratti:</strong> Sopravvivenza Boschi, Tiro Precisione, Tracciare<br>
+    <strong>Beni:</strong> Fucile (del padre—prima caccia incisa), Coltello, 7 razioni, Borraccia<br>
+    <strong>Res:</strong> 4 | <strong>Fort:</strong> 2<br>
+    <strong>Gancio:</strong> Vendere pellicce rare</p>
+</div>
+
+<div class="character-box">
+    <h3>Dr. Sarah Whitmore – Medico</h3>
+    <p><em>Compassionevole, razionale</em></p>
+    <p><strong>Tratti:</strong> Anatomia, Erboristeria, Intuito Paranormale<br>
+    <strong>Soprannaturale:</strong> Sensibilità Presenze +1<br>
+    <strong>Beni:</strong> Borsa Medica (mentore), Cavallo, Acqua Santa, 5 razioni<br>
+    <strong>Res:</strong> 4 | <strong>Fort:</strong> 2<br>
+    <strong>Gancio:</strong> Epidemia inesistente</p>
+</div>
+
+<div class="character-box">
+    <h3>Rev. Thomas Clay – Predicatore</h3>
+    <p><em>Devoto, eloquente</em></p>
+    <p><strong>Tratti:</strong> Teologia, Oratoria, Riconoscere Maligno<br>
+    <strong>Soprannaturale:</strong> Benedizioni Sacre +1<br>
+    <strong>Beni:</strong> Bibbia (3 generazioni), Croce Argento, 2 Acqua Santa, 4 razioni<br>
+    <strong>Res:</strong> 4 | <strong>Fort:</strong> 2<br>
+    <strong>Gancio:</strong> Battesimo mai celebrato</p>
+</div>
+
+<div class="character-box">
+    <h3>Elena Rosetti – Mercante</h3>
+    <p><em>Astuta, pragmatica, ambiziosa</em></p>
+    <p><strong>Tratti:</strong> Contrattazione, Lingue (It/Fr/En), Valutare Ricchezze<br>
+    <strong>Beni:</strong> Medaglione (madre), Carrozza, Merci, 50 sterline, 6 razioni<br>
+    <strong>Res:</strong> 4 | <strong>Fort:</strong> 2<br>
+    <strong>Gancio:</strong> Contratto argento</p>
+</div>
+
+<h2>Consigli Cronista</h2>
+
+<p class="compact"><strong>Atmosfera:</strong> Contrasto abbondanza/vuoto. Sapore metallico acqua, crescita visibile (edera copre porta in notte). Leggi diari ad alta voce. Progressione fame: G1 "insipido" → G3 "crampi" → G5 "guardate altri come carne" → G7 "bistecche camminano".</p>
+
+<p class="compact"><strong>Meccanica Fame:</strong> -1 Res/giorno. Cibo +1 Res ma fame ritorna 1h (2h Campo). Acqua contaminata +1G. Res 0 = Prova/ora vs impulsi (12+Gettoni). Campo Margherite = rifugio, cibo funziona.</p>
+
+<p class="compact"><strong>Soglia 6G:</strong> Timer 1h reale. Eco Reverendo: "Campo! Sangue terra sterile!" Opzioni: Sacrificio Fortuna -2G, salvare PG -1G, donare ultima razione -1G, seppellire bambino -1G. Se scade: 7G automatico, Manifestazione.</p>
+
+<p class="compact"><strong>Manifestazione:</strong> Non mostro—MADRE aliena. Odore: fertile+latte+decomposizione. Suono: crescita+sussurri. Vista: forme cambiano troppo veloce. Tatto: aria densa, liquida, soffocante. Enfatizza tenerezza distorta, non odio.</p>
+
+<p class="compact"><strong>Sacrifici:</strong> Possesso—storia oggetto, brucia con ricordi-fumo, acqua schiarisce. Fortuna—taglio, sangue terra, fiori sbocciano, segna -1 Fort. Ego—Custode epilogo dettagliato o giuramento solenne, Reverendo sorride: "Avete imparato l'umiltà."</p>
+
+<p class="compact"><strong>Gettoni Mistero:</strong> Corpi Pequot +1, Diario Martha +1, Collegare acqua/fame +1, Invocazione involontaria +1, Cassetta +2, Maledizione Pequot +1. Spendere: indizio 1GM, +2 Prova 1GM, ridurre difficoltà 2GM.</p>
+
+<p class="compact"><strong>Quercia:</strong> Descrivi Wequai centrale, radici come morsa amore materno, volto tranquillo (aveva accettato). Chiave brilla in mano scheletrica. Incisioni "respirano". Toccare = visione morte Pequot.</p>
+
+<div style="margin-top: 15px; padding-top: 10px; border-top: 2px solid #2c2c2c; font-style: italic; font-size: 9pt; text-align: center;">
+<p><em>La Madre che Nutre Troppo sta chiamando. L'acqua è stata avvelenata dalla vendetta giusta. Ascolterete la saggezza scritta nel sangue, o berrete dalla fonte maledetta?</em></p>
+</div>
+
+</body>
+</html>
