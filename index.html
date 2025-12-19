@@ -7,109 +7,168 @@
     <style>
         @page {
             size: A4;
-            margin: 1cm;
+            margin: 0.8cm;
         }
         
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Garamond', 'Times New Roman', serif;
             font-size: 9pt;
-            line-height: 1.25;
+            line-height: 1.3;
             color: #000;
             margin: 0;
             padding: 0;
-            background: white;
+            background: #f5f0e8;
         }
         
         .page {
             width: 21cm;
             min-height: 29.7cm;
             margin: 0 auto;
-            padding: 1cm;
+            padding: 0.8cm;
             box-sizing: border-box;
             page-break-after: always;
+            background: linear-gradient(rgba(0,0,0,0.02), transparent),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="200" height="200" filter="url(%23noise)" opacity="0.05"/></svg>');
+            background-color: #f8f5f0;
+            border: 3px solid #000;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.1);
         }
         
         .page:last-child {
             page-break-after: auto;
         }
         
-        .title-page {
+        /* HEADER DECORATIVO GRANDE */
+        .title-block {
             text-align: center;
-            border: 4px solid #000;
-            padding: 20px;
-            margin-bottom: 15px;
-            background: white;
+            margin: 0 0 15px 0;
+            padding: 20px 10px;
+            border: 4px double #000;
+            background: #fff;
+            box-shadow: 0 4px 0 #000;
+            position: relative;
         }
         
-        .title-page h1 {
-            font-size: 20pt;
-            margin: 0 0 5px 0;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .title-block::before,
+        .title-block::after {
+            content: '✦ ✦ ✦';
+            display: block;
+            font-size: 12pt;
+            letter-spacing: 8px;
+            margin: 5px 0;
+        }
+        
+        .title-block h1 {
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 900;
+            margin: 8px 0;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
         
-        .title-page p {
+        .title-block .subtitle {
+            font-family: 'Garamond', serif;
             font-size: 11pt;
-            margin: 0;
             font-style: italic;
+            margin: 5px 0 0 0;
+            letter-spacing: 2px;
         }
         
+        /* LAYOUT COLONNE */
         .three-column {
             column-count: 3;
-            column-gap: 15px;
+            column-gap: 12px;
             column-fill: balance;
         }
         
+        .two-column {
+            column-count: 2;
+            column-gap: 12px;
+        }
+        
+        /* HEADERS SEZIONI */
         h2 {
+            font-family: 'Cinzel', 'Georgia', serif;
             font-size: 11pt;
             font-weight: bold;
             margin: 12px 0 6px 0;
             text-transform: uppercase;
-            border-bottom: 2px solid #000;
-            padding-bottom: 2px;
-            letter-spacing: 0.5px;
-            column-span: none;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #000;
+            border-top: 1px solid #000;
+            padding: 3px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
             break-after: avoid;
+            position: relative;
+        }
+        
+        h2::before {
+            content: '◆';
+            margin-right: 8px;
+        }
+        
+        h2::after {
+            content: '◆';
+            margin-left: 8px;
         }
         
         h3 {
+            font-family: 'Georgia', serif;
             font-size: 9pt;
             font-weight: bold;
             margin: 8px 0 4px 0;
+            font-variant: small-caps;
             break-after: avoid;
         }
         
         p {
             margin: 0 0 6px 0;
             text-align: justify;
+            text-indent: 0;
         }
         
+        /* BOX STATISTICHE STILE DUTCH HANGMAN */
         .stat-box {
-            border: 2px solid #000;
+            border: 3px solid #000;
             padding: 0;
             margin: 8px 0;
-            background: white;
+            background: #fff;
             break-inside: avoid;
-            box-shadow: 2px 2px 0px #000;
+            box-shadow: 4px 4px 0px #000;
+            position: relative;
+        }
+        
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 3px;
+            background: #000;
         }
         
         .stat-box-header {
             background: #000;
             color: #fff;
-            padding: 4px 6px;
+            padding: 5px 8px;
             font-weight: bold;
             font-size: 8pt;
-            border-bottom: 2px solid #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Cinzel', 'Georgia', serif;
         }
         
         .stat-box-content {
-            padding: 6px;
-            background: white;
+            padding: 8px;
+            background: #fff;
         }
         
         .stat-box-content p {
-            margin: 0 0 4px 0;
+            margin: 0 0 5px 0;
             font-size: 9pt;
         }
         
@@ -120,86 +179,101 @@
         .character-subtitle {
             font-style: italic;
             font-size: 8pt;
-            color: #333;
-            margin: 0 0 4px 0;
+            color: #444;
+            margin: 0 0 5px 0;
+            border-bottom: 1px dotted #999;
+            padding-bottom: 3px;
         }
         
+        /* FINALI */
         .ending-box {
-            border: 2px solid #000;
+            border: 3px solid #000;
             padding: 0;
             margin: 6px 0;
-            background: white;
+            background: #fff;
             break-inside: avoid;
+            box-shadow: 3px 3px 0px #000;
         }
         
         .ending-box-header {
             background: #000;
             color: #fff;
-            padding: 4px 6px;
+            padding: 4px 8px;
             font-weight: bold;
             font-size: 8pt;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .ending-box-content {
-            padding: 6px;
-            background: white;
+            padding: 6px 8px;
+            background: #fff;
             font-size: 8pt;
         }
         
+        /* MECHANICS BOX */
         .mechanics-box {
             border: 2px solid #000;
             padding: 6px;
             margin: 8px 0;
             background: repeating-linear-gradient(
-                0deg,
+                45deg,
                 #fff,
-                #fff 2px,
-                #f9f9f9 2px,
-                #f9f9f9 4px
+                #fff 10px,
+                #f9f9f9 10px,
+                #f9f9f9 20px
             );
             font-style: italic;
             font-size: 8pt;
             break-inside: avoid;
+            box-shadow: 2px 2px 0px #000;
         }
         
+        /* TABELLE */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 8px 0;
-            border: 2px solid #000;
-            background: white;
+            border: 3px solid #000;
+            background: #fff;
             break-inside: avoid;
+            box-shadow: 3px 3px 0px #000;
         }
         
         table th {
             background-color: #000;
             color: #fff;
-            padding: 3px 5px;
+            padding: 4px 6px;
             text-align: left;
             font-weight: bold;
             border: 1px solid #000;
             font-size: 7pt;
+            text-transform: uppercase;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.5px;
         }
         
         table td {
-            padding: 3px 5px;
+            padding: 4px 6px;
             border: 1px solid #000;
-            background: white;
+            background: #fff;
             vertical-align: top;
             font-size: 7pt;
         }
         
         table tr:nth-child(even) td {
-            background: #f9f9f9;
+            background: #f5f5f5;
         }
         
+        /* LISTE */
         ul, ol {
             margin: 4px 0 6px 20px;
             padding: 0;
         }
         
         li {
-            margin: 2px 0;
+            margin: 3px 0;
             font-size: 9pt;
         }
         
@@ -211,43 +285,142 @@
             font-style: italic;
         }
         
-        .footer {
-            margin-top: 15px;
-            padding-top: 8px;
-            border-top: 2px solid #000;
-            font-style: italic;
-            font-size: 7pt;
+        /* MAPPA PLACEHOLDER */
+        .map-container {
+            border: 4px double #000;
+            padding: 10px;
+            margin: 10px 0;
+            background: #fff;
             text-align: center;
+            min-height: 280px;
+            break-inside: avoid;
+            position: relative;
+            box-shadow: 4px 4px 0px #000;
+        }
+        
+        .map-container h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 12pt;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 220px;
+            background: 
+                linear-gradient(45deg, transparent 48%, #ddd 48%, #ddd 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, #ddd 48%, #ddd 52%, transparent 52%);
+            background-size: 20px 20px;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #666;
+            font-size: 10pt;
+        }
+        
+        /* LOCATION LIST PER MAPPA */
+        .location-list {
+            font-size: 7pt;
+            columns: 2;
+            column-gap: 10px;
+            text-align: left;
+            margin-top: 8px;
+        }
+        
+        .location-item {
+            margin: 2px 0;
+            break-inside: avoid;
+        }
+        
+        .location-num {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+            font-weight: bold;
+            margin-right: 4px;
+            border-radius: 50%;
+        }
+        
+        /* FOOTER */
+        .footer {
+            margin-top: 12px;
+            padding: 8px 0;
+            border-top: 3px double #000;
+            border-bottom: 3px double #000;
+            font-style: italic;
+            font-size: 8pt;
+            text-align: center;
+            column-span: all;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.03) 50%, transparent 100%);
+        }
+        
+        .footer::before {
+            content: '◈';
+            margin-right: 10px;
+        }
+        
+        .footer::after {
+            content: '◈';
+            margin-left: 10px;
+        }
+        
+        /* CITAZIONE EVOCATIVA */
+        .quote-block {
+            text-align: center;
+            font-style: italic;
+            font-size: 9pt;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 3px solid #000;
+            border-right: 3px solid #000;
+            background: rgba(0,0,0,0.02);
             column-span: all;
         }
         
-        .two-column-section {
-            column-count: 2;
-            column-gap: 12px;
-        }
-        
+        /* FULL WIDTH */
         .full-width {
             column-span: all;
         }
         
         @media print {
             body {
-                padding: 0;
+                background: white;
+            }
+            .page {
+                border: none;
+                box-shadow: none;
             }
             .stat-box {
-                box-shadow: 1px 1px 0px #000;
+                box-shadow: 2px 2px 0px #000;
             }
         }
     </style>
 </head>
 <body>
 
+<!-- ============================================ -->
 <!-- FACCIATA 1 -->
+<!-- ============================================ -->
 <div class="page">
 
-<div class="title-page">
-    <h1>IL BANCHETTO SILENZIOSO<br>DI HAVENWOOD</h1>
-    <p>Un modulo per Rural Gothic</p>
+<div class="title-block">
+    <h1>LA MADRE<br>DI HAVENWOOD</h1>
+    <div class="subtitle">Un modulo per Rural Gothic</div>
+</div>
+
+<div class="quote-block">
+<em>"Lo senti prima di vederlo: le radici che scricchiolano sotto terra,<br>
+il respiro affamato della foresta, la prima goccia di pioggia."</em>
 </div>
 
 <div class="three-column">
@@ -262,7 +435,7 @@
 <p>In sei mesi la fertilità divenne fame insaziabile. L'intera popolazione si divorò durante una notte di luna piena nel "Banchetto Silenzioso". Le radici emersero per finire i moribondi e assorbirono i resti, lasciando solo tumuli di ossa.</p>
 
 <h2>Scena Iniziale</h2>
-<p><strong>FAME.</strong></p>
+<p style="text-align: center; font-size: 16pt; font-weight: bold; margin: 8px 0; letter-spacing: 3px;">FAME.</p>
 
 <p>Pomeriggio grigio. I personaggi attraversano il passo verso Havenwood. Il villaggio appare tranquillo ma le strade sono deserte, le porte spalancate, i boccali ancora pieni. Poi emergono i tumuli—piccole colline sparse ovunque. Scavando trovano ossa umane rosicchiate, fratturate per il midollo. La neve cade più fitta. I passi si chiudono. Sono intrappolati.</p>
 
@@ -277,11 +450,11 @@
 
 <h2>Distruggere la Maledizione</h2>
 <ol>
-    <li><strong>Trovare la Cassetta di Rame:</strong> Sepolta sotto le radici della Quercia, tra i corpi mummificati. Localizzabile tramite Silas o un giorno di scavo pericoloso.</li>
+    <li><strong>Trovare la Cassetta di Rame:</strong> Sepolta sotto le radici della Quercia (<strong>5</strong>), tra i corpi mummificati. Localizzabile tramite Silas o un giorno di scavo pericoloso.</li>
     <li><strong>Tre Sacrifici (in ordine):</strong>
         <ul>
             <li><strong>Quercia—Possesso:</strong> Bruciare oggetto di valore emotivo (perso permanente). Acqua schiarisce.</li>
-            <li><strong>Campo—Fortuna:</strong> Versare sangue sulla terra sterile (-1 Fortuna permanente). Margherite rinascono.</li>
+            <li><strong>Campo—Fortuna:</strong> Versare sangue sulla terra sterile (<strong>8</strong>), perdere 1 Fortuna. Margherite rinascono.</li>
             <li><strong>Pietra—Ego:</strong> Un PG diventa Custode (PNG) OPPURE giuramento collettivo non sfruttare valle.</li>
         </ul>
     </li>
@@ -294,8 +467,8 @@
 <table>
     <tr>
         <th style="width: 12%;">GETTONI</th>
-        <th style="width: 50%;">MANIFESTAZIONI</th>
-        <th style="width: 38%;">EFFETTI</th>
+        <th style="width: 48%;">MANIFESTAZIONI</th>
+        <th style="width: 40%;">EFFETTI</th>
     </tr>
     <tr>
         <td><strong>0-1</strong></td>
@@ -331,146 +504,167 @@
 <h2>La Manifestazione</h2>
 <p>A 7 Gettoni l'entità si manifesta: massa impossibile di vita eccessiva. Carne germoglia da carne, ossa fioriscono come piante, terra partorisce e divora. È alta quanto gli alberi o forse riempie la valle. Migliaia di bocche sussurrano: <em>"Figli affamati. Vi ho dato abbondanza infinita. Lasciate che la Madre vi nutra. Per sempre. Insieme."</em></p>
 
-<p><strong>Effetti:</strong> Prova Volontà (17). Fallimento = paralisi 1d6 turni. Successo = -2 Prove per scena.</p>
+<p><strong>Effetti:</strong> Prova Volontà (17). Fallimento = paralisi 1d6 turni. Successo = -2 Prove per scena. <strong>Tentazione:</strong> Visione personalizzata. Prova Volontà ogni turno (14). Tre fallimenti = soggiogato.</p>
 
-<p><strong>Tentazione:</strong> Visione personalizzata per ogni PG. Prova Volontà ogni turno (14). Tre fallimenti = soggiogato, mangia compulsivamente.</p>
+<p><strong>Superarla:</strong> Acqua santa (barriera 1 turno), Benedizioni (no Prove 3 turni), Doppio Sacrificio (dissolve immediato), Sacrificio Ego (dissolve permanente), Alba 12 turni (dissolve lenta, torna notte dopo).</p>
 
-<p><strong>Superarla:</strong> Acqua santa (barriera 1 turno), Benedizioni (no Prove 3 turni), Doppio Sacrificio (dissolve immediato), Sacrificio Ego (dissolve permanente), Alba dopo 12 turni (dissolve lenta, torna notte dopo).</p>
+</div>
 
+<div class="footer">
+<strong>La Madre che Nutre Troppo chiama attraverso le radici viventi.</strong>
 </div>
 
 </div>
 
+<!-- ============================================ -->
 <!-- FACCIATA 2 -->
+<!-- ============================================ -->
 <div class="page">
+
+<!-- MAPPA IN ALTO -->
+<div class="map-container full-width">
+    <h3>⚔ Havenwood ⚔</h3>
+    <div class="map-placeholder">
+        <div>
+            <strong>MAPPA ILLUSTRATA</strong><br>
+            <em>(8 Luoghi Chiave + Fiume Coldway + Foresta Circostante)</em><br><br>
+            <small>Stile: Prospettiva 3/4, Edifici Disegnati, B/N</small>
+        </div>
+    </div>
+    <div class="location-list">
+        <div class="location-item"><span class="location-num">1</span> Chiesa di San Benedetto</div>
+        <div class="location-item"><span class="location-num">2</span> Casa del Sindaco Croft</div>
+        <div class="location-item"><span class="location-num">3</span> Locanda del Viandante</div>
+        <div class="location-item"><span class="location-num">4</span> Miniera d'Argento</div>
+        <div class="location-item"><span class="location-num">5</span> Quercia della Sorgente</div>
+        <div class="location-item"><span class="location-num">6</span> Pietra del Patto</div>
+        <div class="location-item"><span class="location-num">7</span> Tumuli delle Ossa</div>
+        <div class="location-item"><span class="location-num">8</span> Campo delle Margherite</div>
+    </div>
+</div>
 
 <div class="three-column">
 
 <h2>Personaggi Principali</h2>
 
 <div class="stat-box">
-    <div class="stat-box-header">REV. ELIAS THORNE (ECO)</div>
+    <div class="stat-box-header">Rev. Elias Thorne (Eco)</div>
     <div class="stat-box-content">
         <p class="character-subtitle">Consunto dal rimorso, traslucido</p>
-        <p>Eco manifestabile alla Pietra del Patto. Confessa di aver invocato entità aliena credendola Dio. Conosce gli eventi ma non i rituali (mai visti documenti Wequai). Implora perdono per aver rifiutato aiuto Pequot. A 6 Gettoni indica il Campo: "Il sangue sulla terra sterile!"</p>
+        <p>Eco manifestabile alla Pietra del Patto (<strong>6</strong>). Confessa di aver invocato entità aliena credendola Dio. Implora perdono per aver rifiutato aiuto Pequot. A 6 Gettoni indica il Campo: <em>"Il sangue sulla terra sterile!"</em></p>
     </div>
 </div>
 
 <div class="stat-box">
-    <div class="stat-box-header">WEQUAI (RESTI E DOCUMENTI)</div>
+    <div class="stat-box-header">Wequai (Resti)</div>
     <div class="stat-box-content">
         <p class="character-subtitle">Mercante Pequot mummificato</p>
-        <p>Commerciava da decenni con francesi. Resti alla base Quercia, avvolti dalle radici. Mano scheletrica tiene chiave rame. Cassetta contiene: rituali contenimento (lingua Pequot), diario, mappa insediamenti caduti. Ultima nota: "Incisi simboli Fame Eterna. Acqua diventerà veleno. Chiudiamo ciò che non possiamo redimere."</p>
+        <p>Resti alla Quercia (<strong>5</strong>), avvolti dalle radici. Mano scheletrica tiene chiave rame. Cassetta: rituali contenimento (Pequot), diario, mappa insediamenti caduti. Ultima nota: <em>"Incisi simboli Fame Eterna. Acqua veleno. Chiudiamo ciò che non possiamo redimere."</em></p>
     </div>
 </div>
 
 <div class="stat-box">
-    <div class="stat-box-header">SILAS THORNE</div>
+    <div class="stat-box-header">Silas Thorne</div>
     <div class="stat-box-content">
         <p class="character-subtitle">Pallido, cinquant'anni solitudine</p>
-        <p>Figlio Reverendo. Cantina Sindaco, botti acqua piovana. Sopravvissuto bevendo solo pioggia, nutrendosi ratti/corteccia. Mai bevuto Quercia dopo aver visto effetti. Conosce posizione cassetta, pretende TUTTE provviste. Tutto = info +2G. Metà = info parziali. Curarlo = alleato gratis.</p>
+        <p>Figlio Reverendo. Cantina Sindaco (<strong>2</strong>), botti acqua piovana. Sopravvissuto bevendo solo pioggia, mai Quercia. Conosce cassetta, pretende TUTTE provviste. Tutto = info +2G. Metà = parziali. Curarlo = alleato gratis.</p>
     </div>
 </div>
 
 <div class="stat-box">
-    <div class="stat-box-header">MARTHA GOODWIN (DIARI)</div>
+    <div class="stat-box-header">Martha Goodwin (Diari)</div>
     <div class="stat-box-content">
-        <p class="character-subtitle">Locandiera, presente via scritti</p>
-        <p>Diari cruciali progressione. Primi mesi: "Raccolti triplicati!" Terzo: "Acqua metallica... sangue. Cibo non sazia." Quinto: "Fame nell'anima. Guardo vicini diversamente..." Ultime pagine: illeggibili, macchiate scuro.</p>
+        <p class="character-subtitle">Locandiera, diari progressione</p>
+        <p>Locanda (<strong>3</strong>). Primi mesi: <em>"Raccolti triplicati!"</em> Terzo: <em>"Acqua metallica... non sazia."</em> Quinto: <em>"Fame nell'anima. Guardo vicini diversamente..."</em> Ultime: illeggibili, macchiate.</p>
     </div>
 </div>
 
 <div class="stat-box">
-    <div class="stat-box-header">SINDACO CROFT (DOCUMENTI)</div>
+    <div class="stat-box-header">Sindaco Croft (Documenti)</div>
     <div class="stat-box-content">
-        <p class="character-subtitle">Proprietario, avidità condannò villaggio</p>
-        <p>Registri: profitti straordinari, vene argento infinite. Lettera: "Pequot parla superstizioni minacciano prosperità divina. Guardie scortino via." Ultima: "Qualcosa nell'acqua... fame... niente placa..."</p>
+        <p class="character-subtitle">Avidità condannò villaggio</p>
+        <p>Casa (<strong>2</strong>). Registri: profitti straordinari. Lettera: <em>"Pequot superstizioni minacciano prosperità divina. Guardie scortino via."</em> Ultima: <em>"Qualcosa nell'acqua... fame..."</em></p>
     </div>
 </div>
 
 <h2>Luoghi Importanti</h2>
 
-<p><strong>1. Chiesa:</strong> Centro villaggio. Diario reverendo invocazione. Biblioteca frammenti testi francesi. Pozzo acqua meno metallica. Pietra benedetta = rifugio sicuro, radici non penetrano.</p>
+<p><strong><span class="location-num">1</span> Chiesa:</strong> Centro villaggio. Diario reverendo invocazione. Biblioteca frammenti francesi. Pozzo acqua meno metallica. Pietra benedetta = rifugio sicuro tempeste, radici non penetrano.</p>
 
-<p><strong>2. Casa Sindaco:</strong> Dimora ricca, argenteria. Studio contabilità. Cassetto segreto lettere sprezzanti Pequot. Cantina: Silas tra botti acqua piovana.</p>
+<p><strong><span class="location-num">2</span> Casa Sindaco:</strong> Ricca, argenteria. Studio contabilità. Cassetto lettere Pequot. Cantina: Silas tra botti acqua piovana.</p>
 
-<p><strong>3. Locanda:</strong> Taverna silenziosa. Scena congelata—boccali acqua scura, cibo metà. Cucina: diario Martha. Deposito: 2d6 razioni, 1d6 brocche acqua contaminata.</p>
+<p><strong><span class="location-num">3</span> Locanda:</strong> Taverna silenziosa. Scena congelata. Cucina: diario Martha. Deposito: 2d6 razioni, 1d6 brocche contaminata.</p>
 
-<p><strong>4. Miniera:</strong> Collina dietro villaggio. Carrelli minerale traboccanti. Tunnel: echi lamenti/risate. Profondità: radici in roccia. Pepita pugno: 100+ sterline, +2G prenderla. Crolli 2d6 danni.</p>
+<p><strong><span class="location-num">4</span> Miniera:</strong> Collina dietro villaggio. Carrelli traboccanti. Profondità: radici in roccia. Pepita pugno: 100+ sterline, +2G. Crolli 2d6.</p>
 
-<p><strong>5. Quercia:</strong> Massiccia. Incisioni Pequot Fame Eterna. Base: resti Wequai e tre compagni avvolti radici. Tre sorgenti: acqua torbida sa sangue/terra. Cassetta 1m sotto, tra corpi. Prima visita +1G. 4+G radici attaccano notte.</p>
+<p><strong><span class="location-num">5</span> Quercia:</strong> Massiccia. Incisioni Fame Eterna. Base: resti Wequai avvolti radici. Tre sorgenti torbide sa sangue/terra. Cassetta 1m sotto, tra corpi. Prima +1G. 4+G radici notte.</p>
 
-<p><strong>6. Pietra Patto:</strong> Menhir cuore foresta. Rune pulsano. Aria gelida, silenzio innaturale. Sensitivi vedono: Reverendo prega, risposta aliena fumo verde. Luogo 3º sacrificio.</p>
+<p><strong><span class="location-num">6</span> Pietra Patto:</strong> Menhir cuore foresta. Rune pulsano. Aria gelida, silenzio innaturale. Sensitivi: Reverendo prega, risposta fumo verde. Luogo 3º sacrificio.</p>
 
-<p><strong>7. Tumuli:</strong> Sparsi ovunque. Cumuli 1m, ossa rosicchiate/fratturate. Pattern radici sotterranee. Scoperta +1G. Uno piazza: resti bambino, medaglione "Thomas". Seppellire -1G.</p>
+<p><strong><span class="location-num">7</span> Tumuli:</strong> Sparsi ovunque. Cumuli 1m, ossa rosicchiate. Pattern radici sotterranee. Scoperta +1G. Piazza: bambino Thomas, medaglione. Seppellire -1G.</p>
 
-<p><strong>8. Campo Margherite:</strong> Dietro chiesa, ex matrimoni. Fiori morti, terra sterile—opposto abbondanza. Influenza debole/assente. Cibo mantiene sapore, fame placa 2h. Acqua piovana pura. Luogo 2º sacrificio. Post: fiori rinascono, cerchio protettivo.</p>
+<p><strong><span class="location-num">8</span> Campo Margherite:</strong> Dietro chiesa, ex matrimoni. Fiori morti, terra sterile. Influenza debole. Cibo sapore, fame placa 2h. Acqua piovana pura. Luogo 2º sacrificio. Post: fiori cerchio protettivo.</p>
 
 <h2>Dilemmi Attivi</h2>
 
 <div class="mechanics-box">
-<p><strong>Silas (G2-3):</strong> Tutto cibo = info +2G. Metà = info parziali dimezza scavo. Rifiuto = attacco/fuga. Curarlo = alleato tutto gratis.</p>
+<p><strong>Silas (G2-3):</strong> Tutto cibo = info +2G. Metà = parziali dimezza scavo. Rifiuto = attacco/fuga. Curarlo = alleato.</p>
 
-<p><strong>Rifugio (G4 sera):</strong> Tempesta. Chiesa (sicura, no cibo) o Locanda (cibo, radici). Solo UN luogo. 5 min reali decidere. Divisi: Locanda radici tutta notte.</p>
+<p><strong>Rifugio (G4 sera):</strong> Tempesta. Chiesa (sicura, no cibo) o Locanda (cibo, radici). UN luogo. 5 min reali. Divisi: Locanda radici notte.</p>
 
-<p><strong>Cassetta (G3-4):</strong> Groviglio radici tra corpi. Prova Difficile Res. Successo = cassetta -2 danni. Fallimento = intrappolato, Prova collettiva liberare. 5+G radici 1d6/turno. Sacrificio volontario = assorbito, cassetta emerge, -2G tutti, PG perso.</p>
+<p><strong>Cassetta (G3-4):</strong> Groviglio radici. Prova Difficile Res. OK = -2 danni. Fallimento = intrappolato, collettiva liberare. 5+G radici 1d6/turno. Sacrificio volontario = assorbito, cassetta emerge, -2G tutti, PG perso.</p>
 </div>
 
 <h2>Timeline 7-9 Giorni</h2>
 
-<p>Giorno 0 (pomeriggio): Arrivo Havenwood deserto. Sera: tumuli +1G, neve chiude. Giorno 1: Fame leggera. Chiesa/Sindaco/Locanda, diari. Egoismo +1G. Giorno 2: Fame forte -1 Res. Vegetazione cm/ora. Sera: Silas. Giorno 3: Conseguenze Silas. Quercia +1G. Cassetta. 4+G radici notte. Giorno 4: Se cassetta: rituali compresi. Fame -1 Res auto. Pomeriggio: 1º sacrificio. Sera: Dilemma Rifugio. Giorno 5: Tempesta. Passi sigillati. 2º sacrificio. 5+G allucinazioni. 6G SOGLIA timer 1h. Giorno 6: Tensione max. 6+ non ridotti = 7G Manifestazione. Gestito: 3º sacrificio. Eco implora. Fame insopportabile. Giorno 7: Finale. Rituali o cedimento. 7+: Manifestazione + Tentazione. Alternativa: Doppio Sacrificio.</p>
+<p><strong>G0:</strong> Tumuli +1G, neve. <strong>G1:</strong> Fame, diari. <strong>G2:</strong> -1 Res, Silas sera. <strong>G3:</strong> Quercia +1G, cassetta, 4+G radici. <strong>G4:</strong> Rituali compresi, 1º sacrificio, Dilemma Rifugio sera. <strong>G5:</strong> Tempesta, 2º sacrificio, 6G=Timer. <strong>G6:</strong> 6+ non ridotti = 7G Manifestazione. Gestito: 3º sacrificio. <strong>G7:</strong> Finale. Rituali o cedimento.</p>
 
 <h2>I Finali</h2>
 
 <div class="ending-box">
-    <div class="ending-box-header">EQUILIBRIO RESTAURATO</div>
+    <div class="ending-box-header">Equilibrio Restaurato</div>
     <div class="ending-box-content">
-        <p>Tre sacrifici pre-7G. Verità Wequai. Resistono tentazione.</p>
-        <p><strong>Risultato:</strong> Valle purificata. Acqua cristallina. Radici ritirano. Fame scompare. Ripopolabile rispettando equilibrio.</p>
+        <p>Tre sacrifici pre-7G. Verità Wequai. Resistono tentazione. <strong>→</strong> Valle purificata. Acqua cristallina. Fame scompare.</p>
     </div>
 </div>
 
 <div class="ending-box">
-    <div class="ending-box-header">VITTORIA PARZIALE</div>
+    <div class="ending-box-header">Vittoria Parziale</div>
     <div class="ending-box-content">
-        <p>1-2 sacrifici o tutti post-7G.</p>
-        <p><strong>Solo Possesso:</strong> Fame placa, fertilità resta. <strong>Solo Fortuna:</strong> Equilibrio parziale, acqua corrotta. Campo rifugio. <strong>Solo Ego:</strong> Patto annullato, maledizione persiste. <strong>Tutti 7+G:</strong> Purificazione, trauma permanente. <strong>Custode:</strong> PG parte valle, eco. Altri fuggono colpevoli.</p>
+        <p>1-2 sacrifici o tutti post-7G. <strong>→</strong> Purificazione incompleta o trauma permanente. Custode diventa eco, altri colpevoli.</p>
     </div>
 </div>
 
 <div class="ending-box">
-    <div class="ending-box-header">FUGA DISPERATA</div>
+    <div class="ending-box-header">Fuga Disperata</div>
     <div class="ending-box-content">
-        <p>5-6G, fuga pre-Manifestazione. 5 Prove vs tempesta (15), fame (14), radici (16), freddo (13), tentazioni (17). 2+ fallimenti = morte/cattura.</p>
-        <p><strong>Risultato:</strong> Sopravvivenza fisica, trauma psicologico. -1 Fort tutti. Maledizione attiva. Visioni fame perpetue, disturbi alimentari.</p>
+        <p>5-6G, fuga pre-Manifestazione. 5 Prove vs tempesta/fame/radici/freddo/tentazioni. 2+ fallimenti = morte. <strong>→</strong> -1 Fort, trauma perpetuo.</p>
     </div>
 </div>
 
 <div class="ending-box">
-    <div class="ending-box-header">NUOVO BANCHETTO</div>
+    <div class="ending-box-header">Nuovo Banchetto</div>
     <div class="ending-box-content">
-        <p>8+G cedimento inevitabile. Fame annulla razionalità. Tradimenti automatici. Violenza cannibale irresistibile. Radici emergono, assorbono resti.</p>
-        <p><strong>Risultato:</strong> Morte tutti. Parte maledizione eterna. Nuovi tumuli. Voci sussurri attendono prossimi.</p>
+        <p>8+G cedimento. Fame annulla razionalità. Violenza cannibale. Radici assorbono. <strong>→</strong> Morte tutti. Parte maledizione eterna.</p>
     </div>
 </div>
 
 <div class="ending-box">
-    <div class="ending-box-header">DOPPIO SACRIFICIO SUPREMO (7+G)</div>
+    <div class="ending-box-header">Doppio Sacrificio Supremo (7+G)</div>
     <div class="ending-box-content">
-        <p>Manifestazione presente. Due PG offrono sacrificio definitivo simultaneo. Dichiarano, mani unite, camminano verso entità. Assorbiti—tenerezza materna. Non consumo—trasformazione. Parte valle, guardiani eterni.</p>
-        <p><strong>Immediato:</strong> Tutti Gettoni → 0. Manifestazione dissolve. Altri: 2h gioco fuggire (passi riaprono) o rituali (vittoria).</p>
-        <p><strong>Risultato:</strong> Due = echi protettivi permanenti benevoli. Appaiono sogni, sussurrano avvertimenti ("Non bevete Quercia"). Altri sopravvivono. Rituali = vittoria + leggenda. Fuga = -1 Fort, sacrificio diede speranza.</p>
+        <p>Manifestazione presente. Due PG offrono simultaneo. Assorbiti—trasformazione. <strong>Immediato:</strong> Tutti Gettoni → 0. Dissolve. Altri: 2h fuggire o rituali. <strong>→</strong> Due = echi protettivi permanenti. Altri: vittoria + leggenda o fuga -1 Fort.</p>
     </div>
 </div>
 
 <div class="mechanics-box" style="margin-top: 10px;">
-<p><strong>Note Cronista:</strong> Enfatizza contrasto abbondanza/vuoto costantemente. Fame progressiva visceral (G1 cartone, G3 crampi, G5 carne fresca, G7 bistecche parlanti). Manifestazione = MADRE aliena eccessiva, non mostro—tenerezza distorta, mai odio. Sacrifici memorabili: racconta storia emotiva oggetto, descrivi sangue assorbito terra, epilogo poetico Custode/giuramento solenne.</p>
+<p><strong>Note Cronista:</strong> Enfatizza contrasto abbondanza/vuoto. Fame visceral progressiva (G1 cartone → G7 bistecche parlanti). Manifestazione = MADRE eccessiva, tenerezza distorta mai odio. Sacrifici memorabili: storia emotiva oggetto, sangue assorbito terra, epilogo poetico Custode.</p>
 </div>
 
 </div>
 
 <div class="footer">
-    <p><strong>La Madre che Nutre Troppo chiama attraverso le radici viventi. L'acqua porta la vendetta giusta dei morti traditi. Ascolterete la saggezza scritta nel sangue, o berrete dalla fonte maledetta?</strong></p>
+<strong>L'acqua porta la vendetta giusta dei morti traditi.<br>
+Ascolterete la saggezza scritta nel sangue, o berrete dalla fonte maledetta?</strong>
 </div>
 
 </div>
