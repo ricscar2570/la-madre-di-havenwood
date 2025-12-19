@@ -21,7 +21,7 @@
         }
         
         /* ============================================ */
-        /* FACCIATA 1 - QUERCIA NERA SU BIANCO */
+        /* FACCIATA 1 - QUERCIA NERA DOMINANTE */
         /* ============================================ */
         .page-one {
             width: 21cm;
@@ -31,38 +31,35 @@
             page-break-after: always;
             position: relative;
             overflow: hidden;
-            background: #f8f5f0;
-            border: 3px solid #000;
-            box-sizing: border-box;
+            background: #000;
         }
         
-        /* SVG QUERCIA - POSIZIONE ASSOLUTA CENTRO-ALTO */
-        .tree-svg {
+        /* SVG QUERCIA BACKGROUND */
+        .tree-background {
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 100%;
-            height: 50%;
+            height: 100%;
             z-index: 1;
-            pointer-events: none;
         }
         
-        /* CONTENT LAYER */
+        /* CONTENT LAYER SOPRA QUERCIA */
         .page-one-content {
             position: relative;
             z-index: 2;
             padding: 0.8cm;
+            color: #fff;
         }
         
-        /* HEADER DECORATIVO */
+        /* HEADER DECORATIVO SU NERO */
         .title-block {
             text-align: center;
             margin: 0 0 15px 0;
             padding: 20px 10px;
-            border: 4px double #000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 4px 4px 0px #000;
+            border: 4px double #fff;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
             position: relative;
         }
         
@@ -73,7 +70,7 @@
             font-size: 12pt;
             letter-spacing: 8px;
             margin: 5px 0;
-            color: #000;
+            color: #fff;
         }
         
         .title-block h1 {
@@ -83,8 +80,8 @@
             margin: 8px 0;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #000;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
         
         .title-block .subtitle {
@@ -93,17 +90,292 @@
             font-style: italic;
             margin: 5px 0 0 0;
             letter-spacing: 2px;
+            color: #fff;
+        }
+        
+        /* COLONNE SU NERO */
+        .three-column-dark {
+            column-count: 3;
+            column-gap: 12px;
+            column-fill: balance;
+            color: #fff;
+        }
+        
+        /* HEADERS SU NERO */
+        h2.dark {
+            font-family: 'Cinzel', 'Georgia', serif;
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 12px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #fff;
+            border-top: 1px solid #fff;
+            padding: 3px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            break-after: avoid;
+            color: #fff;
+        }
+        
+        h2.dark::before {
+            content: '◆';
+            margin-right: 8px;
+        }
+        
+        h2.dark::after {
+            content: '◆';
+            margin-left: 8px;
+        }
+        
+        h3.dark {
+            font-family: 'Georgia', serif;
+            font-size: 9pt;
+            font-weight: bold;
+            margin: 8px 0 4px 0;
+            font-variant: small-caps;
+            break-after: avoid;
+            color: #fff;
+        }
+        
+        p.dark {
+            margin: 0 0 6px 0;
+            text-align: justify;
+            color: #fff;
+        }
+        
+        /* BOX SU NERO - BIANCO CON TESTO NERO */
+        .stat-box-dark {
+            border: 3px solid #fff;
+            padding: 0;
+            margin: 8px 0;
+            background: #fff;
+            break-inside: avoid;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+        
+        .stat-box-dark .stat-box-header {
+            background: #000;
+            color: #fff;
+            padding: 5px 8px;
+            font-weight: bold;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Cinzel', 'Georgia', serif;
+            border-bottom: 2px solid #fff;
+        }
+        
+        .stat-box-dark .stat-box-content {
+            padding: 8px;
+            background: #fff;
             color: #000;
         }
         
-        /* COLONNE */
+        .stat-box-dark .stat-box-content p {
+            margin: 0 0 5px 0;
+            font-size: 9pt;
+            color: #000;
+        }
+        
+        .stat-box-dark .stat-box-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* TABELLA SU NERO */
+        table.dark {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            border: 3px solid #fff;
+            background: #fff;
+            break-inside: avoid;
+        }
+        
+        table.dark th {
+            background-color: #000;
+            color: #fff;
+            padding: 4px 6px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #fff;
+            font-size: 7pt;
+            text-transform: uppercase;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.5px;
+        }
+        
+        table.dark td {
+            padding: 4px 6px;
+            border: 1px solid #000;
+            background: #fff;
+            vertical-align: top;
+            font-size: 7pt;
+            color: #000;
+        }
+        
+        table.dark tr:nth-child(even) td {
+            background: #f5f5f5;
+        }
+        
+        /* LISTE SU NERO */
+        ul.dark, ol.dark {
+            margin: 4px 0 6px 20px;
+            padding: 0;
+            color: #fff;
+        }
+        
+        ul.dark li, ol.dark li {
+            margin: 3px 0;
+            font-size: 9pt;
+            color: #fff;
+        }
+        
+        strong.dark {
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        em.dark {
+            font-style: italic;
+            color: #fff;
+        }
+        
+        /* CITAZIONE SU NERO */
+        .quote-block-dark {
+            text-align: center;
+            font-style: italic;
+            font-size: 9pt;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 3px solid #fff;
+            border-right: 3px solid #fff;
+            background: rgba(255,255,255,0.1);
+            column-span: all;
+            color: #fff;
+        }
+        
+        /* FOOTER SU NERO */
+        .footer-dark {
+            margin-top: 12px;
+            padding: 8px 0;
+            border-top: 3px double #fff;
+            border-bottom: 3px double #fff;
+            font-style: italic;
+            font-size: 8pt;
+            text-align: center;
+            column-span: all;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+        }
+        
+        .footer-dark::before {
+            content: '◈';
+            margin-right: 10px;
+        }
+        
+        .footer-dark::after {
+            content: '◈';
+            margin-left: 10px;
+        }
+        
+        /* ============================================ */
+        /* FACCIATA 2 - RADICI CONTINUANO + MAPPA */
+        /* ============================================ */
+        .page-two {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0;
+            padding: 0.8cm;
+            page-break-after: auto;
+            position: relative;
+            background: #f8f5f0;
+            border: 3px solid #000;
+            box-sizing: border-box;
+        }
+        
+        /* SVG RADICI BACKGROUND FACCIATA 2 */
+        .roots-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            z-index: 1;
+            opacity: 0.15;
+        }
+        
+        /* CONTENT FACCIATA 2 */
+        .page-two-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* MAPPA CONTAINER */
+        .map-container {
+            border: 4px double #000;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            background: #fff;
+            text-align: center;
+            min-height: 320px;
+            break-inside: avoid;
+            position: relative;
+            box-shadow: 4px 4px 0px #000;
+        }
+        
+        .map-container h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 12pt;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        
+        /* SVG MAPPA */
+        .map-svg {
+            width: 100%;
+            height: 280px;
+            border: 2px solid #000;
+        }
+        
+        /* LISTA LOCATIONS */
+        .location-list {
+            font-size: 7pt;
+            columns: 2;
+            column-gap: 10px;
+            text-align: left;
+            margin-top: 8px;
+        }
+        
+        .location-item {
+            margin: 2px 0;
+            break-inside: avoid;
+        }
+        
+        .location-num {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+            font-weight: bold;
+            margin-right: 4px;
+            border-radius: 50%;
+        }
+        
+        /* COLONNE NORMALI FACCIATA 2 */
         .three-column {
             column-count: 3;
             column-gap: 12px;
             column-fill: balance;
         }
         
-        /* HEADERS */
+        /* HEADERS NORMALI FACCIATA 2 */
         h2 {
             font-family: 'Cinzel', 'Georgia', serif;
             font-size: 11pt;
@@ -143,7 +415,7 @@
             text-align: justify;
         }
         
-        /* BOX STATISTICHE */
+        /* BOX NORMALI */
         .stat-box {
             border: 3px solid #000;
             padding: 0;
@@ -232,43 +504,6 @@
             box-shadow: 2px 2px 0px #000;
         }
         
-        /* TABELLE */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 8px 0;
-            border: 3px solid #000;
-            background: #fff;
-            break-inside: avoid;
-            box-shadow: 3px 3px 0px #000;
-        }
-        
-        table th {
-            background-color: #000;
-            color: #fff;
-            padding: 4px 6px;
-            text-align: left;
-            font-weight: bold;
-            border: 1px solid #000;
-            font-size: 7pt;
-            text-transform: uppercase;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 0.5px;
-        }
-        
-        table td {
-            padding: 4px 6px;
-            border: 1px solid #000;
-            background: #fff;
-            vertical-align: top;
-            font-size: 7pt;
-        }
-        
-        table tr:nth-child(even) td {
-            background: #f5f5f5;
-        }
-        
-        /* LISTE */
         ul, ol {
             margin: 4px 0 6px 20px;
             padding: 0;
@@ -287,20 +522,7 @@
             font-style: italic;
         }
         
-        /* CITAZIONE */
-        .quote-block {
-            text-align: center;
-            font-style: italic;
-            font-size: 9pt;
-            padding: 10px;
-            margin: 10px 0;
-            border-left: 3px solid #000;
-            border-right: 3px solid #000;
-            background: rgba(0,0,0,0.02);
-            column-span: all;
-        }
-        
-        /* FOOTER */
+        /* FOOTER NORMALE */
         .footer {
             margin-top: 12px;
             padding: 8px 0;
@@ -323,95 +545,6 @@
             margin-left: 10px;
         }
         
-        /* ============================================ */
-        /* FACCIATA 2 - RADICI + MAPPA */
-        /* ============================================ */
-        .page-two {
-            width: 21cm;
-            height: 29.7cm;
-            margin: 0;
-            padding: 0.8cm;
-            page-break-after: auto;
-            position: relative;
-            background: #f8f5f0;
-            border: 3px solid #000;
-            box-sizing: border-box;
-        }
-        
-        /* SVG RADICI BACKGROUND FACCIATA 2 */
-        .roots-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            z-index: 1;
-            opacity: 0.15;
-        }
-        
-        /* CONTENT FACCIATA 2 */
-        .page-two-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* MAPPA CONTAINER */
-        .map-container {
-            border: 4px double #000;
-            padding: 10px;
-            margin: 0 0 10px 0;
-            background: #fff;
-            text-align: center;
-            min-height: 320px;
-            break-inside: avoid;
-            position: relative;
-            box-shadow: 4px 4px 0px #000;
-        }
-        
-        .map-container h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 12pt;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
-        }
-        
-        /* SVG MAPPA */
-        .map-svg {
-            width: 100%;
-            height: 280px;
-            border: 2px solid #000;
-        }
-        
-        /* LISTA LOCATIONS */
-        .location-list {
-            font-size: 7pt;
-            columns: 2;
-            column-gap: 10px;
-            text-align: left;
-            margin-top: 8px;
-        }
-        
-        .location-item {
-            margin: 2px 0;
-            break-inside: avoid;
-        }
-        
-        .location-num {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            line-height: 16px;
-            font-weight: bold;
-            margin-right: 4px;
-            border-radius: 50%;
-        }
-        
         .full-width {
             column-span: all;
         }
@@ -421,7 +554,7 @@
                 background: white;
             }
             .page-one, .page-two {
-                box-shadow: none;
+                border: none;
             }
         }
     </style>
@@ -429,135 +562,149 @@
 <body>
 
 <!-- ============================================ -->
-<!-- FACCIATA 1 - QUERCIA SU SFONDO BIANCO -->
+<!-- FACCIATA 1 - QUERCIA NERA GIGANTE -->
 <!-- ============================================ -->
 <div class="page-one">
-    <!-- SVG QUERCIA NERA - OCCUPA METÀ PAGINA SUPERIORE -->
-    <svg class="tree-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
-        <!-- CHIOMA MASSICCIA IN ALTO -->
-        <ellipse cx="400" cy="120" rx="280" ry="100" fill="#000" opacity="1"/>
-        <ellipse cx="300" cy="140" rx="200" ry="90" fill="#000" opacity="1"/>
-        <ellipse cx="500" cy="140" rx="200" ry="90" fill="#000" opacity="1"/>
-        <ellipse cx="400" cy="80" rx="220" ry="70" fill="#000" opacity="1"/>
-        <circle cx="350" cy="130" r="80" fill="#000" opacity="1"/>
-        <circle cx="450" cy="130" r="80" fill="#000" opacity="1"/>
-        
+    <!-- SVG QUERCIA BACKGROUND -->
+    <svg class="tree-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1131" preserveAspectRatio="xMidYMid slice">
         <!-- TRONCO CENTRALE MASSICCIO -->
-        <rect x="340" y="180" width="120" height="250" fill="#000" opacity="1" rx="10"/>
+        <path d="M 350,300 Q 320,450 300,600 Q 290,750 280,900 Q 275,1000 270,1131" 
+              fill="none" stroke="#000" stroke-width="80" opacity="1"/>
+        <path d="M 450,300 Q 480,450 500,600 Q 510,750 520,900 Q 525,1000 530,1131" 
+              fill="none" stroke="#000" stroke-width="80" opacity="1"/>
         
-        <!-- RADICI CHE SCENDONO VERSO BORDI -->
+        <!-- CHIOMA MASSICCIA -->
+        <ellipse cx="400" cy="200" rx="250" ry="180" fill="#000" opacity="0.9"/>
+        <ellipse cx="300" cy="250" rx="180" ry="150" fill="#000" opacity="0.8"/>
+        <ellipse cx="500" cy="250" rx="180" ry="150" fill="#000" opacity="0.8"/>
+        <ellipse cx="400" cy="150" rx="200" ry="120" fill="#000" opacity="0.85"/>
         
-        <!-- RADICI VERSO SINISTRA -->
-        <path d="M 360,400 Q 320,450 280,500 Q 240,550 200,600" 
-              fill="none" stroke="#000" stroke-width="45" opacity="1"/>
-        <path d="M 350,420 Q 300,470 250,520 Q 210,560 170,600" 
-              fill="none" stroke="#000" stroke-width="38" opacity="1"/>
-        <path d="M 340,440 Q 280,490 230,540 Q 190,570 140,600" 
-              fill="none" stroke="#000" stroke-width="32" opacity="1"/>
-        <path d="M 330,460 Q 270,510 210,560 Q 170,580 110,600" 
-              fill="none" stroke="#000" stroke-width="28" opacity="0.95"/>
-        <path d="M 320,480 Q 250,530 180,570 Q 140,590 80,600" 
-              fill="none" stroke="#000" stroke-width="24" opacity="0.9"/>
-        <path d="M 310,500 Q 230,545 160,575 Q 120,592 50,600" 
-              fill="none" stroke="#000" stroke-width="20" opacity="0.85"/>
-        <path d="M 300,510 Q 210,550 140,580 Q 100,595 20,600" 
-              fill="none" stroke="#000" stroke-width="16" opacity="0.8"/>
+        <!-- RADICI PRINCIPALI CHE SCENDONO -->
+        <!-- Radice Sinistra Grande -->
+        <path d="M 280,900 Q 200,950 150,1000 Q 100,1050 50,1100 L 30,1131" 
+              fill="none" stroke="#000" stroke-width="35" opacity="0.95"/>
+        <path d="M 270,950 Q 180,1000 120,1050 Q 80,1080 40,1131" 
+              fill="none" stroke="#000" stroke-width="28" opacity="0.9"/>
+        <path d="M 260,1000 Q 200,1050 150,1080 Q 120,1100 80,1131" 
+              fill="none" stroke="#000" stroke-width="22" opacity="0.85"/>
         
-        <!-- RADICI CENTRALI CHE VANNO GIÙ -->
-        <rect x="360" y="420" width="30" height="180" fill="#000" opacity="1"/>
-        <rect x="410" y="420" width="30" height="180" fill="#000" opacity="1"/>
-        <path d="M 375,540 Q 370,565 365,590 L 360,600" 
-              fill="none" stroke="#000" stroke-width="25" opacity="0.95"/>
-        <path d="M 425,540 Q 430,565 435,590 L 440,600" 
-              fill="none" stroke="#000" stroke-width="25" opacity="0.95"/>
+        <!-- Radice Sinistra Media -->
+        <path d="M 290,920 Q 240,970 180,1020 Q 140,1060 100,1131" 
+              fill="none" stroke="#000" stroke-width="30" opacity="0.9"/>
+        <path d="M 280,970 Q 220,1020 160,1070 Q 130,1100 90,1131" 
+              fill="none" stroke="#000" stroke-width="24" opacity="0.85"/>
         
-        <!-- RADICI VERSO DESTRA -->
-        <path d="M 440,400 Q 480,450 520,500 Q 560,550 600,600" 
-              fill="none" stroke="#000" stroke-width="45" opacity="1"/>
-        <path d="M 450,420 Q 500,470 550,520 Q 590,560 630,600" 
-              fill="none" stroke="#000" stroke-width="38" opacity="1"/>
-        <path d="M 460,440 Q 520,490 570,540 Q 610,570 660,600" 
-              fill="none" stroke="#000" stroke-width="32" opacity="1"/>
-        <path d="M 470,460 Q 530,510 590,560 Q 630,580 690,600" 
-              fill="none" stroke="#000" stroke-width="28" opacity="0.95"/>
-        <path d="M 480,480 Q 550,530 620,570 Q 660,590 720,600" 
-              fill="none" stroke="#000" stroke-width="24" opacity="0.9"/>
-        <path d="M 490,500 Q 570,545 640,575 Q 680,592 750,600" 
-              fill="none" stroke="#000" stroke-width="20" opacity="0.85"/>
-        <path d="M 500,510 Q 590,550 660,580 Q 700,595 780,600" 
-              fill="none" stroke="#000" stroke-width="16" opacity="0.8"/>
+        <!-- Radice Centro-Sinistra -->
+        <path d="M 300,950 Q 280,1000 250,1050 Q 230,1080 200,1131" 
+              fill="none" stroke="#000" stroke-width="32" opacity="0.9"/>
+        <path d="M 310,1000 Q 290,1050 260,1090 Q 240,1110 210,1131" 
+              fill="none" stroke="#000" stroke-width="26" opacity="0.85"/>
+        
+        <!-- Radice Centrale -->
+        <path d="M 350,1000 Q 360,1050 370,1090 L 380,1131" 
+              fill="none" stroke="#000" stroke-width="40" opacity="0.95"/>
+        <path d="M 450,1000 Q 440,1050 430,1090 L 420,1131" 
+              fill="none" stroke="#000" stroke-width="40" opacity="0.95"/>
+        
+        <!-- Radice Centro-Destra -->
+        <path d="M 500,950 Q 520,1000 550,1050 Q 570,1080 600,1131" 
+              fill="none" stroke="#000" stroke-width="32" opacity="0.9"/>
+        <path d="M 490,1000 Q 510,1050 540,1090 Q 560,1110 590,1131" 
+              fill="none" stroke="#000" stroke-width="26" opacity="0.85"/>
+        
+        <!-- Radice Destra Media -->
+        <path d="M 510,920 Q 560,970 620,1020 Q 660,1060 700,1131" 
+              fill="none" stroke="#000" stroke-width="30" opacity="0.9"/>
+        <path d="M 520,970 Q 580,1020 640,1070 Q 670,1100 710,1131" 
+              fill="none" stroke="#000" stroke-width="24" opacity="0.85"/>
+        
+        <!-- Radice Destra Grande -->
+        <path d="M 520,900 Q 600,950 650,1000 Q 700,1050 750,1100 L 770,1131" 
+              fill="none" stroke="#000" stroke-width="35" opacity="0.95"/>
+        <path d="M 530,950 Q 620,1000 680,1050 Q 720,1080 760,1131" 
+              fill="none" stroke="#000" stroke-width="28" opacity="0.9"/>
+        <path d="M 540,1000 Q 600,1050 650,1080 Q 680,1100 720,1131" 
+              fill="none" stroke="#000" stroke-width="22" opacity="0.85"/>
         
         <!-- RADICI SECONDARIE (più sottili) -->
-        <path d="M 330,450 Q 270,495 210,535 Q 170,565 120,600" 
-              fill="none" stroke="#000" stroke-width="18" opacity="0.85"/>
-        <path d="M 350,470 Q 310,515 260,555 Q 220,580 170,600" 
-              fill="none" stroke="#000" stroke-width="15" opacity="0.8"/>
+        <path d="M 250,980 Q 190,1020 140,1060 L 110,1131" 
+              fill="none" stroke="#000" stroke-width="18" opacity="0.8"/>
+        <path d="M 330,1020 Q 310,1070 280,1110 L 260,1131" 
+              fill="none" stroke="#000" stroke-width="16" opacity="0.75"/>
+        <path d="M 470,1020 Q 490,1070 520,1110 L 540,1131" 
+              fill="none" stroke="#000" stroke-width="16" opacity="0.75"/>
+        <path d="M 550,980 Q 610,1020 660,1060 L 690,1131" 
+              fill="none" stroke="#000" stroke-width="18" opacity="0.8"/>
         
-        <path d="M 470,450 Q 530,495 590,535 Q 630,565 680,600" 
-              fill="none" stroke="#000" stroke-width="18" opacity="0.85"/>
-        <path d="M 450,470 Q 490,515 540,555 Q 580,580 630,600" 
-              fill="none" stroke="#000" stroke-width="15" opacity="0.8"/>
-        
-        <!-- DETTAGLI CORTECCIA SUL TRONCO -->
-        <ellipse cx="400" cy="250" rx="45" ry="30" fill="none" stroke="#333" stroke-width="3" opacity="0.3"/>
-        <ellipse cx="380" cy="320" rx="35" ry="25" fill="none" stroke="#333" stroke-width="2" opacity="0.3"/>
-        <ellipse cx="420" cy="350" rx="40" ry="28" fill="none" stroke="#333" stroke-width="2" opacity="0.3"/>
+        <!-- RADICI ANCORA PIÙ SOTTILI (dettaglio) -->
+        <path d="M 230,1010 Q 170,1050 120,1090 L 70,1131" 
+              fill="none" stroke="#000" stroke-width="12" opacity="0.7"/>
+        <path d="M 320,1040 Q 300,1080 275,1110 L 250,1131" 
+              fill="none" stroke="#000" stroke-width="10" opacity="0.65"/>
+        <path d="M 390,1050 Q 395,1090 398,1131" 
+              fill="none" stroke="#000" stroke-width="14" opacity="0.7"/>
+        <path d="M 410,1050 Q 405,1090 402,1131" 
+              fill="none" stroke="#000" stroke-width="14" opacity="0.7"/>
+        <path d="M 480,1040 Q 500,1080 525,1110 L 550,1131" 
+              fill="none" stroke="#000" stroke-width="10" opacity="0.65"/>
+        <path d="M 570,1010 Q 630,1050 680,1090 L 730,1131" 
+              fill="none" stroke="#000" stroke-width="12" opacity="0.7"/>
     </svg>
     
-    <!-- CONTENT SOPRA/INTORNO QUERCIA -->
+    <!-- CONTENT SOPRA QUERCIA -->
     <div class="page-one-content">
         <div class="title-block">
             <h1>LA MADRE<br>DI HAVENWOOD</h1>
             <div class="subtitle">Un modulo per Rural Gothic</div>
         </div>
 
-        <div class="quote-block">
+        <div class="quote-block-dark">
             <em>"Lo senti prima di vederlo: le radici che scricchiolano sotto terra,<br>
             il respiro affamato della foresta, la prima goccia di pioggia."</em>
         </div>
 
-        <div class="three-column">
+        <div class="three-column-dark">
 
-        <h2>Il Mistero</h2>
-        <p>Cinquant'anni fa, durante una carestia devastante, il Reverendo Elias Thorne invocò inconsapevolmente <strong>Shub-Niggurath, la Capra Nera dei Boschi</strong>, pregando per salvezza. Havenwood esplose in abbondanza corrotta: raccolti eccessivi, animali prolifici, argento infinito dalla miniera.</p>
+        <h2 class="dark">Il Mistero</h2>
+        <p class="dark">Cinquant'anni fa, durante una carestia devastante, il Reverendo Elias Thorne invocò inconsapevolmente <strong class="dark">Shub-Niggurath, la Capra Nera dei Boschi</strong>, pregando per salvezza. Havenwood esplose in abbondanza corrotta: raccolti eccessivi, animali prolifici, argento infinito dalla miniera.</p>
 
-        <p>Un anno dopo arrivarono mercanti Pequot guidati da Wequai, che possedeva rituali di contenimento e riconobbe i segni della fertilità maledetta. Il Reverendo e il Sindaco Croft, accecati dall'avidità, scacciarono brutalmente i Pequot nei boschi gelidi.</p>
+        <p class="dark">Un anno dopo arrivarono mercanti Pequot guidati da Wequai, che possedeva rituali di contenimento e riconobbe i segni della fertilità maledetta. Il Reverendo e il Sindaco Croft, accecati dall'avidità, scacciarono brutalmente i Pequot nei boschi gelidi.</p>
 
-        <p>Morendo ai piedi della Quercia della Sorgente—l'albero che filtrava tutta l'acqua del villaggio—i Pequot incisero simboli maledetti che trasformarono l'acqua in veicolo di fame perpetua. Wequai seppellì i rituali salvatori in una cassetta di rame. Poi l'albero li avvolse con le radici, mummificandoli.</p>
+        <p class="dark">Morendo ai piedi della Quercia della Sorgente—l'albero che filtrava tutta l'acqua del villaggio—i Pequot incisero simboli maledetti che trasformarono l'acqua in veicolo di fame perpetua. Wequai seppellì i rituali salvatori in una cassetta di rame. Poi l'albero li avvolse con le radici, mummificandoli.</p>
 
-        <p>In sei mesi la fertilità divenne fame insaziabile. L'intera popolazione si divorò durante una notte di luna piena nel "Banchetto Silenzioso". Le radici emersero per finire i moribondi e assorbirono i resti, lasciando solo tumuli di ossa.</p>
+        <p class="dark">In sei mesi la fertilità divenne fame insaziabile. L'intera popolazione si divorò durante una notte di luna piena nel "Banchetto Silenzioso". Le radici emersero per finire i moribondi e assorbirono i resti, lasciando solo tumuli di ossa.</p>
 
-        <h2>Scena Iniziale</h2>
-        <p style="text-align: center; font-size: 16pt; font-weight: bold; margin: 8px 0; letter-spacing: 3px;">FAME.</p>
+        <h2 class="dark">Scena Iniziale</h2>
+        <p style="text-align: center; font-size: 16pt; font-weight: bold; margin: 8px 0; letter-spacing: 3px; color: #fff;">FAME.</p>
 
-        <p>Pomeriggio grigio. I personaggi attraversano il passo verso Havenwood. Il villaggio appare tranquillo ma le strade sono deserte, le porte spalancate, i boccali ancora pieni. Poi emergono i tumuli—piccole colline sparse ovunque. Scavando trovano ossa umane rosicchiate, fratturate per il midollo. La neve cade più fitta. I passi si chiudono. Sono intrappolati.</p>
+        <p class="dark">Pomeriggio grigio. I personaggi attraversano il passo verso Havenwood. Il villaggio appare tranquillo ma le strade sono deserte, le porte spalancate, i boccali ancora pieni. Poi emergono i tumuli—piccole colline sparse ovunque. Scavando trovano ossa umane rosicchiate, fratturate per il midollo. La neve cade più fitta. I passi si chiudono. Sono intrappolati.</p>
 
-        <p><em>[Tutti guadagnano 1 Gettone Terrore]</em></p>
+        <p class="dark"><em class="dark">[Tutti guadagnano 1 Gettone Terrore]</em></p>
 
-        <h2>L'Eco della Capra Nera</h2>
-        <p><strong>Natura:</strong> Influenza di Shub-Niggurath amplificata dalla maledizione Pequot. La fertilità dell'entità veicolata dall'acqua contaminata genera un ciclo divoratore perpetuo.</p>
+        <h2 class="dark">L'Eco della Capra Nera</h2>
+        <p class="dark"><strong class="dark">Natura:</strong> Influenza di Shub-Niggurath amplificata dalla maledizione Pequot. La fertilità dell'entità veicolata dall'acqua contaminata genera un ciclo divoratore perpetuo.</p>
 
-        <p><strong>Manifestazioni:</strong> Crescita vegetale distorta e accelerata. Cibo che diventa cenere in bocca. Sussurri che promettono abbondanza infinita. Visioni del Banchetto Silenzioso originale.</p>
+        <p class="dark"><strong class="dark">Manifestazioni:</strong> Crescita vegetale distorta e accelerata. Cibo che diventa cenere in bocca. Sussurri che promettono abbondanza infinita. Visioni del Banchetto Silenzioso originale.</p>
 
-        <p><strong>Poteri:</strong> Fame spirituale veicolata dall'acqua. Radici che si muovono come esseri viventi. Illusioni elaborate di abbondanza. Corruzione che si intensifica nutrendosi di egoismo e avidità.</p>
+        <p class="dark"><strong class="dark">Poteri:</strong> Fame spirituale veicolata dall'acqua. Radici che si muovono come esseri viventi. Illusioni elaborate di abbondanza. Corruzione che si intensifica nutrendosi di egoismo e avidità.</p>
 
-        <h2>Distruggere la Maledizione</h2>
-        <ol>
-            <li><strong>Trovare la Cassetta di Rame:</strong> Sepolta sotto le radici della Quercia (<strong>5</strong>), tra i corpi mummificati. Localizzabile tramite Silas o un giorno di scavo pericoloso.</li>
-            <li><strong>Tre Sacrifici (in ordine):</strong>
-                <ul>
-                    <li><strong>Quercia—Possesso:</strong> Bruciare oggetto di valore emotivo (perso permanente). Acqua schiarisce.</li>
-                    <li><strong>Campo—Fortuna:</strong> Versare sangue sulla terra sterile (<strong>8</strong>), perdere 1 Fortuna. Margherite rinascono.</li>
-                    <li><strong>Pietra—Ego:</strong> Un PG diventa Custode (PNG) OPPURE giuramento collettivo non sfruttare valle.</li>
+        <h2 class="dark">Distruggere la Maledizione</h2>
+        <ol class="dark">
+            <li><strong class="dark">Trovare la Cassetta di Rame:</strong> Sepolta sotto le radici della Quercia (<strong class="dark">5</strong>), tra i corpi mummificati. Localizzabile tramite Silas o un giorno di scavo pericoloso.</li>
+            <li><strong class="dark">Tre Sacrifici (in ordine):</strong>
+                <ul class="dark">
+                    <li><strong class="dark">Quercia—Possesso:</strong> Bruciare oggetto di valore emotivo (perso permanente). Acqua schiarisce.</li>
+                    <li><strong class="dark">Campo—Fortuna:</strong> Versare sangue sulla terra sterile (<strong class="dark">8</strong>), perdere 1 Fortuna. Margherite rinascono.</li>
+                    <li><strong class="dark">Pietra—Ego:</strong> Un PG diventa Custode (PNG) OPPURE giuramento collettivo non sfruttare valle.</li>
                 </ul>
             </li>
-            <li><strong>Resistere Tentazione Finale:</strong> Prova Volontà collettiva vs Difficoltà 15 + Gettoni Terrore attuali.</li>
+            <li><strong class="dark">Resistere Tentazione Finale:</strong> Prova Volontà collettiva vs Difficoltà 15 + Gettoni Terrore attuali.</li>
         </ol>
 
-        <h2>Sistema Gettoni Terrore</h2>
-        <p>I Gettoni misurano l'influenza crescente. Più si accumulano, più la fame divora dall'interno. Personaggi efficienti ottengono 8-9 giorni prima della Manifestazione; chi accumula rapidamente la affronta al Giorno 6.</p>
+        <h2 class="dark">Sistema Gettoni Terrore</h2>
+        <p class="dark">I Gettoni misurano l'influenza crescente. Più si accumulano, più la fame divora dall'interno. Personaggi efficienti ottengono 8-9 giorni prima della Manifestazione; chi accumula rapidamente la affronta al Giorno 6.</p>
 
-        <table>
+        <table class="dark">
             <tr>
                 <th style="width: 12%;">GETTONI</th>
                 <th style="width: 48%;">MANIFESTAZIONI</th>
@@ -590,20 +737,20 @@
             </tr>
         </table>
 
-        <p><strong>Accumulo:</strong> +1 nascondere cibo, tradire compagni, visitare Quercia (prima volta), bere acqua contaminata. +2 violenza per risorse, prendere pepita argento.</p>
+        <p class="dark"><strong class="dark">Accumulo:</strong> +1 nascondere cibo, tradire compagni, visitare Quercia (prima volta), bere acqua contaminata. +2 violenza per risorse, prendere pepita argento.</p>
 
-        <p><strong>Riduzione:</strong> -1 condividere cibo affamati (costa 1 razione), proteggere compagno rischiando vita, seppellire bambino. -2 salvare PG sacrificando oggetto, completare sacrificio rituale.</p>
+        <p class="dark"><strong class="dark">Riduzione:</strong> -1 condividere cibo affamati (costa 1 razione), proteggere compagno rischiando vita, seppellire bambino. -2 salvare PG sacrificando oggetto, completare sacrificio rituale.</p>
 
-        <h2>La Manifestazione</h2>
-        <p>A 7 Gettoni l'entità si manifesta: massa impossibile di vita eccessiva. Carne germoglia da carne, ossa fioriscono come piante, terra partorisce e divora. È alta quanto gli alberi o forse riempie la valle. Migliaia di bocche sussurrano: <em>"Figli affamati. Vi ho dato abbondanza infinita. Lasciate che la Madre vi nutra. Per sempre. Insieme."</em></p>
+        <h2 class="dark">La Manifestazione</h2>
+        <p class="dark">A 7 Gettoni l'entità si manifesta: massa impossibile di vita eccessiva. Carne germoglia da carne, ossa fioriscono come piante, terra partorisce e divora. È alta quanto gli alberi o forse riempie la valle. Migliaia di bocche sussurrano: <em class="dark">"Figli affamati. Vi ho dato abbondanza infinita. Lasciate che la Madre vi nutra. Per sempre. Insieme."</em></p>
 
-        <p><strong>Effetti:</strong> Prova Volontà (17). Fallimento = paralisi 1d6 turni. Successo = -2 Prove per scena. <strong>Tentazione:</strong> Visione personalizzata. Prova Volontà ogni turno (14). Tre fallimenti = soggiogato.</p>
+        <p class="dark"><strong class="dark">Effetti:</strong> Prova Volontà (17). Fallimento = paralisi 1d6 turni. Successo = -2 Prove per scena. <strong class="dark">Tentazione:</strong> Visione personalizzata. Prova Volontà ogni turno (14). Tre fallimenti = soggiogato.</p>
 
-        <p><strong>Superarla:</strong> Acqua santa (barriera 1 turno), Benedizioni (no Prove 3 turni), Doppio Sacrificio (dissolve immediato), Sacrificio Ego (dissolve permanente), Alba 12 turni (dissolve lenta, torna notte dopo).</p>
+        <p class="dark"><strong class="dark">Superarla:</strong> Acqua santa (barriera 1 turno), Benedizioni (no Prove 3 turni), Doppio Sacrificio (dissolve immediato), Sacrificio Ego (dissolve permanente), Alba 12 turni (dissolve lenta, torna notte dopo).</p>
 
         </div>
 
-        <div class="footer">
+        <div class="footer-dark">
         <strong>La Madre che Nutre Troppo chiama attraverso le radici viventi.</strong>
         </div>
     </div>
@@ -616,44 +763,44 @@
     <!-- SVG RADICI CHE CONTINUANO DALL'ALTO -->
     <svg class="roots-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMin slice">
         <!-- Radici che entrano dall'alto -->
-        <path d="M 200,0 Q 210,40 220,80 Q 230,120 235,160 Q 238,200 240,240 Q 242,270 243,300" 
-              fill="none" stroke="#000" stroke-width="45" opacity="0.15"/>
-        <path d="M 170,0 Q 180,40 190,80 Q 200,120 205,160 Q 208,200 210,240 Q 212,270 213,300" 
-              fill="none" stroke="#000" stroke-width="38" opacity="0.13"/>
-        <path d="M 140,0 Q 150,40 160,80 Q 170,120 175,160 Q 178,200 180,240 Q 182,270 183,300" 
-              fill="none" stroke="#000" stroke-width="32" opacity="0.11"/>
-        <path d="M 110,0 Q 120,40 130,80 Q 140,120 145,160 Q 148,200 150,240 Q 152,270 153,300" 
-              fill="none" stroke="#000" stroke-width="28" opacity="0.1"/>
-        <path d="M 80,0 Q 90,40 100,80 Q 110,120 115,160 Q 118,200 120,240 Q 122,270 123,300" 
-              fill="none" stroke="#000" stroke-width="24" opacity="0.09"/>
-        <path d="M 50,0 Q 60,40 70,80 Q 80,120 85,160 Q 88,200 90,240 Q 92,270 93,300" 
-              fill="none" stroke="#000" stroke-width="20" opacity="0.08"/>
-        <path d="M 20,0 Q 30,40 40,80 Q 50,120 55,160 Q 58,200 60,240 Q 62,270 63,300" 
-              fill="none" stroke="#000" stroke-width="16" opacity="0.07"/>
+        <path d="M 30,0 Q 50,50 80,100 Q 100,150 120,200 Q 140,250 150,300" 
+              fill="none" stroke="#000" stroke-width="35" opacity="0.15"/>
+        <path d="M 40,0 Q 60,50 90,100 Q 110,150 130,200 Q 145,250 155,300" 
+              fill="none" stroke="#000" stroke-width="28" opacity="0.12"/>
+        <path d="M 80,0 Q 95,50 120,100 Q 140,150 155,200 Q 165,250 170,300" 
+              fill="none" stroke="#000" stroke-width="22" opacity="0.1"/>
         
-        <path d="M 360,0 Q 365,40 368,80 Q 370,120 372,160 Q 373,200 374,240 Q 375,270 375.5,300" 
+        <path d="M 100,0 Q 120,50 140,100 Q 155,150 170,200 Q 180,250 185,300" 
               fill="none" stroke="#000" stroke-width="30" opacity="0.12"/>
-        <path d="M 440,0 Q 435,40 432,80 Q 430,120 428,160 Q 427,200 426,240 Q 425,270 424.5,300" 
-              fill="none" stroke="#000" stroke-width="30" opacity="0.12"/>
-        <path d="M 375,0 Q 378,40 380,80 Q 382,120 383,160 Q 384,200 385,240 Q 385.5,270 386,300" 
-              fill="none" stroke="#000" stroke-width="25" opacity="0.1"/>
-        <path d="M 425,0 Q 422,40 420,80 Q 418,120 417,160 Q 416,200 415,240 Q 414.5,270 414,300" 
-              fill="none" stroke="#000" stroke-width="25" opacity="0.1"/>
+        <path d="M 90,0 Q 105,50 125,100 Q 145,150 160,200 Q 175,250 182,300" 
+              fill="none" stroke="#000" stroke-width="24" opacity="0.1"/>
         
-        <path d="M 600,0 Q 590,40 580,80 Q 570,120 565,160 Q 562,200 560,240 Q 558,270 557,300" 
-              fill="none" stroke="#000" stroke-width="45" opacity="0.15"/>
-        <path d="M 630,0 Q 620,40 610,80 Q 600,120 595,160 Q 592,200 590,240 Q 588,270 587,300" 
-              fill="none" stroke="#000" stroke-width="38" opacity="0.13"/>
-        <path d="M 660,0 Q 650,40 640,80 Q 630,120 625,160 Q 622,200 620,240 Q 618,270 617,300" 
-              fill="none" stroke="#000" stroke-width="32" opacity="0.11"/>
-        <path d="M 690,0 Q 680,40 670,80 Q 660,120 655,160 Q 652,200 650,240 Q 648,270 647,300" 
-              fill="none" stroke="#000" stroke-width="28" opacity="0.1"/>
-        <path d="M 720,0 Q 710,40 700,80 Q 690,120 685,160 Q 682,200 680,240 Q 678,270 677,300" 
-              fill="none" stroke="#000" stroke-width="24" opacity="0.09"/>
-        <path d="M 750,0 Q 740,40 730,80 Q 720,120 715,160 Q 712,200 710,240 Q 708,270 707,300" 
-              fill="none" stroke="#000" stroke-width="20" opacity="0.08"/>
-        <path d="M 780,0 Q 770,40 760,80 Q 750,120 745,160 Q 742,200 740,240 Q 738,270 737,300" 
-              fill="none" stroke="#000" stroke-width="16" opacity="0.07"/>
+        <path d="M 200,0 Q 210,50 220,100 Q 230,150 235,200 Q 238,250 240,300" 
+              fill="none" stroke="#000" stroke-width="32" opacity="0.13"/>
+        <path d="M 210,0 Q 220,50 230,100 Q 238,150 243,200 Q 246,250 248,300" 
+              fill="none" stroke="#000" stroke-width="26" opacity="0.11"/>
+        
+        <path d="M 380,0 Q 385,50 388,100 Q 390,150 392,200 Q 393,250 394,300" 
+              fill="none" stroke="#000" stroke-width="40" opacity="0.15"/>
+        <path d="M 420,0 Q 415,50 412,100 Q 410,150 408,200 Q 407,250 406,300" 
+              fill="none" stroke="#000" stroke-width="40" opacity="0.15"/>
+        
+        <path d="M 600,0 Q 590,50 580,100 Q 570,150 565,200 Q 562,250 560,300" 
+              fill="none" stroke="#000" stroke-width="32" opacity="0.13"/>
+        <path d="M 590,0 Q 580,50 570,100 Q 562,150 557,200 Q 554,250 552,300" 
+              fill="none" stroke="#000" stroke-width="26" opacity="0.11"/>
+        
+        <path d="M 700,0 Q 680,50 660,100 Q 645,150 635,200 Q 628,250 625,300" 
+              fill="none" stroke="#000" stroke-width="30" opacity="0.12"/>
+        <path d="M 710,0 Q 690,50 670,100 Q 655,150 645,200 Q 638,250 635,300" 
+              fill="none" stroke="#000" stroke-width="24" opacity="0.1"/>
+        
+        <path d="M 770,0 Q 750,50 730,100 Q 710,150 695,200 Q 683,250 678,300" 
+              fill="none" stroke="#000" stroke-width="35" opacity="0.15"/>
+        <path d="M 760,0 Q 740,50 720,100 Q 700,150 685,200 Q 673,250 668,300" 
+              fill="none" stroke="#000" stroke-width="28" opacity="0.12"/>
+        <path d="M 720,0 Q 705,50 685,100 Q 670,150 660,200 Q 652,250 648,300" 
+              fill="none" stroke="#000" stroke-width="22" opacity="0.1"/>
     </svg>
     
     <div class="page-two-content">
